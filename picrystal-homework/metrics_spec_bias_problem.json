@@ -1,0 +1,11 @@
+{
+    "bias": {
+        "function": "demographic parity (NYC)",
+        "specification": {
+            "features": {
+                //no test will be executed if multiple tags are included in the feature tag list"
+                "feature": ["marriage", "citizenship", "sensitive"]
+            }
+        }
+    }
+}

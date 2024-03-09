@@ -1,0 +1,6 @@
+{
+    "performance_accuracy": {
+        "function": "accuracy",
+        "specification": {}
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "bias": {
+        "function": "demographic parity (NYC)",
+        "specification": {
+            "features": {
+                "feature": ["department"]
+            }
+        }
+    }
+}

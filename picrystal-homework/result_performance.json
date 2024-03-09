@@ -1,0 +1,47 @@
+{
+    "performance_accuracy": [
+        {
+            "value": 0.977491961414791,
+            "name": "accuracy",
+            "targets": {
+                "name": "Class labels",
+                "tags": [
+                    "groundtruth",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ]
+            },
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            }
+        }
+    ]
+}
