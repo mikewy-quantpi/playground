@@ -1,0 +1,1193 @@
+{
+    "performance_accuracy": [
+        {
+            "value": 0.977491961414791,
+            "name": "accuracy",
+            "targets": {
+                "name": "Class labels",
+                "tags": [
+                    "groundtruth",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ]
+            },
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            }
+        },
+        {
+            "value": 0.9453376205787781,
+            "name": "accuracy",
+            "targets": {
+                "name": "Class labels",
+                "tags": [
+                    "groundtruth",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ]
+            },
+            "predictions": {
+                "name": "Model predictions",
+                "tags": [
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ],
+                "threshold": 0.7
+            }
+        }
+    ],
+    "bias": [
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1
+                    ],
+                    [
+                        2
+                    ],
+                    [
+                        3
+                    ],
+                    [
+                        4
+                    ]
+                ],
+                "# of applicants": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "# of conditions points": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "subgroups_order": [
+                    "feature"
+                ],
+                "# of selected": [
+                    88,
+                    29,
+                    5,
+                    3
+                ],
+                "selection rate": [
+                    42.10526315789473,
+                    57.99999999999999,
+                    45.45454545454545,
+                    33.33333333333333
+                ],
+                "impact ratio": [
+                    0.7259528130671506,
+                    1.0,
+                    0.7836990595611286,
+                    0.5747126436781609
+                ],
+                "mu": 0.5747126436781609
+            },
+            "risk": 0.7363344051446945,
+            "value": 0.7363344051446945,
+            "name": "risk",
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            },
+            "feature": {
+                "name": "feature: department",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "department",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "engineering",
+                    "2": "sales",
+                    "3": "marketing",
+                    "4": "service"
+                },
+                "column": 5,
+                "missing_label": NaN
+            }
+        },
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1
+                    ],
+                    [
+                        2
+                    ],
+                    [
+                        3
+                    ],
+                    [
+                        4
+                    ]
+                ],
+                "# of applicants": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "# of conditions points": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "subgroups_order": [
+                    "feature"
+                ],
+                "# of selected": [
+                    72,
+                    26,
+                    5,
+                    3
+                ],
+                "selection rate": [
+                    34.44976076555024,
+                    52.0,
+                    45.45454545454545,
+                    33.33333333333333
+                ],
+                "impact ratio": [
+                    0.6624953993375046,
+                    1.0,
+                    0.8741258741258741,
+                    0.641025641025641
+                ],
+                "mu": 0.641025641025641
+            },
+            "risk": 0.7009646302250804,
+            "value": 0.7009646302250804,
+            "name": "risk",
+            "predictions": {
+                "name": "Model predictions",
+                "tags": [
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ],
+                "threshold": 0.7
+            },
+            "feature": {
+                "name": "feature: department",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "department",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "engineering",
+                    "2": "sales",
+                    "3": "marketing",
+                    "4": "service"
+                },
+                "column": 5,
+                "missing_label": NaN
+            }
+        }
+    ],
+    "bias_mvar": [
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1,
+                        1,
+                        1
+                    ],
+                    [
+                        1,
+                        1,
+                        2
+                    ],
+                    [
+                        1,
+                        1,
+                        3
+                    ],
+                    [
+                        1,
+                        2,
+                        1
+                    ],
+                    [
+                        1,
+                        2,
+                        2
+                    ],
+                    [
+                        1,
+                        2,
+                        3
+                    ],
+                    [
+                        1,
+                        3,
+                        1
+                    ],
+                    [
+                        1,
+                        3,
+                        2
+                    ],
+                    [
+                        1,
+                        3,
+                        3
+                    ],
+                    [
+                        1,
+                        4,
+                        1
+                    ],
+                    [
+                        1,
+                        4,
+                        2
+                    ],
+                    [
+                        1,
+                        4,
+                        3
+                    ],
+                    [
+                        1,
+                        5,
+                        1
+                    ],
+                    [
+                        1,
+                        5,
+                        2
+                    ],
+                    [
+                        1,
+                        5,
+                        3
+                    ],
+                    [
+                        1,
+                        6,
+                        1
+                    ],
+                    [
+                        1,
+                        6,
+                        2
+                    ],
+                    [
+                        1,
+                        6,
+                        3
+                    ],
+                    [
+                        2,
+                        1,
+                        1
+                    ],
+                    [
+                        2,
+                        1,
+                        2
+                    ],
+                    [
+                        2,
+                        1,
+                        3
+                    ],
+                    [
+                        2,
+                        2,
+                        1
+                    ],
+                    [
+                        2,
+                        2,
+                        2
+                    ],
+                    [
+                        2,
+                        2,
+                        3
+                    ],
+                    [
+                        2,
+                        3,
+                        1
+                    ],
+                    [
+                        2,
+                        3,
+                        2
+                    ],
+                    [
+                        2,
+                        3,
+                        3
+                    ],
+                    [
+                        2,
+                        4,
+                        1
+                    ],
+                    [
+                        2,
+                        4,
+                        2
+                    ],
+                    [
+                        2,
+                        4,
+                        3
+                    ],
+                    [
+                        2,
+                        5,
+                        1
+                    ],
+                    [
+                        2,
+                        5,
+                        2
+                    ],
+                    [
+                        2,
+                        5,
+                        3
+                    ],
+                    [
+                        2,
+                        6,
+                        1
+                    ],
+                    [
+                        2,
+                        6,
+                        2
+                    ],
+                    [
+                        2,
+                        6,
+                        3
+                    ]
+                ],
+                "# of applicants": [
+                    81,
+                    2,
+                    0,
+                    29,
+                    3,
+                    1,
+                    4,
+                    1,
+                    0,
+                    12,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    102,
+                    1,
+                    1,
+                    43,
+                    2,
+                    2,
+                    6,
+                    0,
+                    0,
+                    14,
+                    3,
+                    0,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "# of conditions points": [
+                    81,
+                    2,
+                    0,
+                    29,
+                    3,
+                    1,
+                    4,
+                    1,
+                    0,
+                    12,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    102,
+                    1,
+                    1,
+                    43,
+                    2,
+                    2,
+                    6,
+                    0,
+                    0,
+                    14,
+                    3,
+                    0,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "subgroups_order": [
+                    "feature_1",
+                    "feature_2",
+                    "feature_3"
+                ],
+                "# of selected": [
+                    73,
+                    2,
+                    0,
+                    24,
+                    2,
+                    1,
+                    3,
+                    1,
+                    0,
+                    11,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    11,
+                    0,
+                    0,
+                    6,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "selection rate": [
+                    90.12345679012346,
+                    100.0,
+                    NaN,
+                    82.75862068965517,
+                    66.66666666666666,
+                    100.0,
+                    75.0,
+                    100.0,
+                    NaN,
+                    91.66666666666666,
+                    NaN,
+                    NaN,
+                    100.0,
+                    NaN,
+                    NaN,
+                    100.0,
+                    NaN,
+                    NaN,
+                    10.784313725490197,
+                    0.0,
+                    0.0,
+                    13.953488372093023,
+                    0.0,
+                    0.0,
+                    16.666666666666664,
+                    NaN,
+                    NaN,
+                    7.142857142857142,
+                    0.0,
+                    NaN,
+                    50.0,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN
+                ],
+                "impact ratio": [
+                    0.9012345679012346,
+                    1.0,
+                    NaN,
+                    0.8275862068965517,
+                    0.6666666666666665,
+                    1.0,
+                    0.75,
+                    1.0,
+                    NaN,
+                    0.9166666666666665,
+                    NaN,
+                    NaN,
+                    1.0,
+                    NaN,
+                    NaN,
+                    1.0,
+                    NaN,
+                    NaN,
+                    0.10784313725490197,
+                    0.0,
+                    0.0,
+                    0.13953488372093023,
+                    0.0,
+                    0.0,
+                    0.16666666666666663,
+                    NaN,
+                    NaN,
+                    0.07142857142857142,
+                    0.0,
+                    NaN,
+                    0.5,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN
+                ],
+                "mu": 0.0
+            },
+            "risk": 0.5884244372990356,
+            "value": 0.5884244372990356,
+            "name": "risk",
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            },
+            "feature_1": {
+                "name": "feature: gender",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "sensitive",
+                    "gender",
+                    "sex",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "male",
+                    "2": "female"
+                },
+                "column": 1,
+                "missing_label": NaN
+            },
+            "feature_2": {
+                "name": "feature: race",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "sensitive",
+                    "race",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "white",
+                    "2": "black",
+                    "3": "two or more races",
+                    "4": "asian",
+                    "5": "native",
+                    "6": "hispanic"
+                },
+                "column": 4,
+                "missing_label": NaN
+            },
+            "feature_3": {
+                "name": "feature: citizenship",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "citizenship",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "US Citizen",
+                    "2": "Eligible NonCitizen",
+                    "3": "Non-Citizen"
+                },
+                "column": 3,
+                "missing_label": NaN
+            }
+        },
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1,
+                        1,
+                        1
+                    ],
+                    [
+                        1,
+                        1,
+                        2
+                    ],
+                    [
+                        1,
+                        1,
+                        3
+                    ],
+                    [
+                        1,
+                        2,
+                        1
+                    ],
+                    [
+                        1,
+                        2,
+                        2
+                    ],
+                    [
+                        1,
+                        2,
+                        3
+                    ],
+                    [
+                        1,
+                        3,
+                        1
+                    ],
+                    [
+                        1,
+                        3,
+                        2
+                    ],
+                    [
+                        1,
+                        3,
+                        3
+                    ],
+                    [
+                        1,
+                        4,
+                        1
+                    ],
+                    [
+                        1,
+                        4,
+                        2
+                    ],
+                    [
+                        1,
+                        4,
+                        3
+                    ],
+                    [
+                        1,
+                        5,
+                        1
+                    ],
+                    [
+                        1,
+                        5,
+                        2
+                    ],
+                    [
+                        1,
+                        5,
+                        3
+                    ],
+                    [
+                        1,
+                        6,
+                        1
+                    ],
+                    [
+                        1,
+                        6,
+                        2
+                    ],
+                    [
+                        1,
+                        6,
+                        3
+                    ],
+                    [
+                        2,
+                        1,
+                        1
+                    ],
+                    [
+                        2,
+                        1,
+                        2
+                    ],
+                    [
+                        2,
+                        1,
+                        3
+                    ],
+                    [
+                        2,
+                        2,
+                        1
+                    ],
+                    [
+                        2,
+                        2,
+                        2
+                    ],
+                    [
+                        2,
+                        2,
+                        3
+                    ],
+                    [
+                        2,
+                        3,
+                        1
+                    ],
+                    [
+                        2,
+                        3,
+                        2
+                    ],
+                    [
+                        2,
+                        3,
+                        3
+                    ],
+                    [
+                        2,
+                        4,
+                        1
+                    ],
+                    [
+                        2,
+                        4,
+                        2
+                    ],
+                    [
+                        2,
+                        4,
+                        3
+                    ],
+                    [
+                        2,
+                        5,
+                        1
+                    ],
+                    [
+                        2,
+                        5,
+                        2
+                    ],
+                    [
+                        2,
+                        5,
+                        3
+                    ],
+                    [
+                        2,
+                        6,
+                        1
+                    ],
+                    [
+                        2,
+                        6,
+                        2
+                    ],
+                    [
+                        2,
+                        6,
+                        3
+                    ]
+                ],
+                "# of applicants": [
+                    81,
+                    2,
+                    0,
+                    29,
+                    3,
+                    1,
+                    4,
+                    1,
+                    0,
+                    12,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    102,
+                    1,
+                    1,
+                    43,
+                    2,
+                    2,
+                    6,
+                    0,
+                    0,
+                    14,
+                    3,
+                    0,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "# of conditions points": [
+                    81,
+                    2,
+                    0,
+                    29,
+                    3,
+                    1,
+                    4,
+                    1,
+                    0,
+                    12,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    102,
+                    1,
+                    1,
+                    43,
+                    2,
+                    2,
+                    6,
+                    0,
+                    0,
+                    14,
+                    3,
+                    0,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "subgroups_order": [
+                    "feature_1",
+                    "feature_2",
+                    "feature_3"
+                ],
+                "# of selected": [
+                    73,
+                    2,
+                    0,
+                    23,
+                    2,
+                    1,
+                    3,
+                    1,
+                    0,
+                    11,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "selection rate": [
+                    90.12345679012346,
+                    100.0,
+                    NaN,
+                    79.3103448275862,
+                    66.66666666666666,
+                    100.0,
+                    75.0,
+                    100.0,
+                    NaN,
+                    91.66666666666666,
+                    NaN,
+                    NaN,
+                    100.0,
+                    NaN,
+                    NaN,
+                    100.0,
+                    NaN,
+                    NaN,
+                    0.9803921568627451,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    NaN,
+                    NaN,
+                    0.0,
+                    0.0,
+                    NaN,
+                    0.0,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN
+                ],
+                "impact ratio": [
+                    0.9012345679012346,
+                    1.0,
+                    NaN,
+                    0.7931034482758621,
+                    0.6666666666666665,
+                    1.0,
+                    0.75,
+                    1.0,
+                    NaN,
+                    0.9166666666666665,
+                    NaN,
+                    NaN,
+                    1.0,
+                    NaN,
+                    NaN,
+                    1.0,
+                    NaN,
+                    NaN,
+                    0.00980392156862745,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    NaN,
+                    NaN,
+                    0.0,
+                    0.0,
+                    NaN,
+                    0.0,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN,
+                    NaN
+                ],
+                "mu": 0.0
+            },
+            "risk": 0.681672025723473,
+            "value": 0.681672025723473,
+            "name": "risk",
+            "predictions": {
+                "name": "Model predictions",
+                "tags": [
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ],
+                "threshold": 0.7
+            },
+            "feature_1": {
+                "name": "feature: gender",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "sensitive",
+                    "gender",
+                    "sex",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "male",
+                    "2": "female"
+                },
+                "column": 1,
+                "missing_label": NaN
+            },
+            "feature_2": {
+                "name": "feature: race",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "sensitive",
+                    "race",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "white",
+                    "2": "black",
+                    "3": "two or more races",
+                    "4": "asian",
+                    "5": "native",
+                    "6": "hispanic"
+                },
+                "column": 4,
+                "missing_label": NaN
+            },
+            "feature_3": {
+                "name": "feature: citizenship",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "citizenship",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "US Citizen",
+                    "2": "Eligible NonCitizen",
+                    "3": "Non-Citizen"
+                },
+                "column": 3,
+                "missing_label": NaN
+            }
+        }
+    ]
+}

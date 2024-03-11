@@ -1,0 +1,25 @@
+{
+    "performance_accuracy": {
+        "function": "accuracy",
+        "specification": {}
+    },
+    "bias": {
+        "function": "demographic parity (NYC)",
+        "specification": {
+            "features": {
+                "feature": ["department"]
+            }
+        }
+    },
+    "bias_mvar": {
+        "function": "demographic parity (NYC)",
+        "specification": {
+            "features": {
+                "feature_1": ["gender"],
+                "feature_2": ["race"],
+                "feature_3": ["citizenship"]
+            }
+        }
+    }
+
+}
