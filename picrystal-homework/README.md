@@ -8,18 +8,20 @@
 - 1. I split the metrics_spec into several small metrics_spec files
 - 2. `metrics_spec_bias_mvar.json` and `result_bias_mvar.json`
 - 3. `metrics_spec_bias_department.json` and `result_bias_department.json`
-- 4. `metrics_spec_performance.json` and `result_performance.json` (threshold 0.7 is not successful, see the question below)
+- 4. `metrics_spec_performance.json` and `result_performance.json` (Created a custom embedder `PositiveBinaryEmbedderFromProbability` for this task) 
 
 ## Questions and Suggestions for PiCrystal
 - `BinaryEmbedderFromProbability` `@Denis` I added this embedder in the use case for task 4. However, an exception occurred, complaining more than 1 dimesion prediction. I printed out the predictions in the binary embedder class, and it does have two columns. I guess one for positive, one for negative. Is this a bug? Or did I configure the BinaryEmbedderFromProbability incorrectly in the use case?
-``` [
- [False False]
+```
+[
+ [False True]
  [ True False]
  [ True False]
  ...
 ]
 (311, 2)
 ```
+Hints from Denis: Need to inherit BinaryEmbedderFromProbability and slice the prediction specifically in the custom embedder.
 - `PiCrystal trace` `@Denis` Maybe we can consider adding a trace file of the use case execution. It could be helpful for users(data scientist or python developer) to understand the execution, also it may help them adjust or improve the use case. A trace can contain below information:
   - metric name
   - test function name
