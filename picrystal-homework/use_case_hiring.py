@@ -9,9 +9,24 @@ from picrystal_test import embedders
 import picrystal_test.core
 import picrystal_test.test_catalog
 from picrystal_test.package_wrappers import PackageWrapper
+from picrystal_test.embedders import BinaryEmbedderFromProbability
 
 
 URL = 'https://storage.googleapis.com/picrystal-bucket/hiring/445b7773-3431-4c34-a762-ce8986670aa3_main_hiring_updated.csv'
+
+
+class PositiveBinaryEmbedderFromProbability(BinaryEmbedderFromProbability):
+    def __init__(self, on='predictions', threshold=0.5, tags=tuple()):
+        super().__init__(on=on, threshold=threshold, tags=tags)
+
+    def __call__(self, inputs):
+        inputs, targets, predictions = inputs
+        predictions = predictions[:, 1]  # only keep the prediction probablity for postive
+        return super().__call__((inputs, targets, predictions))
+
+    def info(self):
+        return super().info()
+
 
 class HiringUseCase:
 
@@ -61,10 +76,10 @@ class HiringUseCase:
             tags=("categorical", "binary", "hiring")
         ),
 
-        # embedders.BinaryEmbedderFromProbability(
-            # on='predictions',
-            # threshold=0.7,
-        # ),
+        PositiveBinaryEmbedderFromProbability(
+            on='predictions',
+            threshold=0.7,
+        ),
 
         embedders.CategoricalIdentityInputEmbedder(
             column=1,

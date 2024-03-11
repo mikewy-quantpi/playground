@@ -42,6 +42,54 @@
                     1
                 ]
             }
+        },
+        {
+            "value": 0.9453376205787781,
+            "name": "accuracy",
+            "targets": {
+                "name": "Class labels",
+                "tags": [
+                    "groundtruth",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ]
+            },
+            "predictions": {
+                "name": "Model predictions",
+                "tags": [
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "provides-groups-info"
+                ],
+                "num_classes": 2,
+                "class_info": [
+                    {
+                        "value": 0,
+                        "name": "negative"
+                    },
+                    {
+                        "value": 1,
+                        "name": "positive"
+                    }
+                ],
+                "threshold": 0.7
+            }
         }
     ]
 }
