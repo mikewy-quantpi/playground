@@ -1,1 +1,92 @@
-{}
+{
+    "bias": [
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1
+                    ],
+                    [
+                        2
+                    ],
+                    [
+                        3
+                    ],
+                    [
+                        4
+                    ]
+                ],
+                "# of applicants": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "# of conditions points": [
+                    209,
+                    50,
+                    11,
+                    9
+                ],
+                "subgroups_order": [
+                    "feature"
+                ],
+                "# of selected": [
+                    88,
+                    29,
+                    5,
+                    3
+                ],
+                "selection rate": [
+                    42.10526315789473,
+                    57.99999999999999,
+                    45.45454545454545,
+                    33.33333333333333
+                ],
+                "impact ratio": [
+                    0.7259528130671506,
+                    1.0,
+                    0.7836990595611286,
+                    0.5747126436781609
+                ],
+                "mu": 0.5747126436781609
+            },
+            "risk": 0.7363344051446945,
+            "value": 0.7363344051446945,
+            "name": "risk",
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            },
+            "feature": {
+                "name": "feature: department",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "department",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "engineering",
+                    "2": "sales",
+                    "3": "marketing",
+                    "4": "service"
+                },
+                "column": 5,
+                "missing_label": NaN
+            }
+        }
+    ]
+}

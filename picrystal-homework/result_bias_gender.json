@@ -1,0 +1,76 @@
+{
+    "bias": [
+        {
+            "metric": {
+                "subgroup": [
+                    [
+                        1
+                    ],
+                    [
+                        2
+                    ]
+                ],
+                "# of applicants": [
+                    135,
+                    176
+                ],
+                "# of conditions points": [
+                    135,
+                    176
+                ],
+                "subgroups_order": [
+                    "feature"
+                ],
+                "# of selected": [
+                    119,
+                    20
+                ],
+                "selection rate": [
+                    88.14814814814815,
+                    11.363636363636363
+                ],
+                "impact ratio": [
+                    1.0,
+                    0.1289152024446142
+                ],
+                "mu": 0.1289152024446142
+            },
+            "risk": 0.5659163987138264,
+            "value": 0.5659163987138264,
+            "name": "risk",
+            "predictions": {
+                "name": "LabelMapEmbedder embedder on predictions",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "provides-groups-info",
+                    "predictions",
+                    "categorical",
+                    "binary",
+                    "hiring"
+                ],
+                "groups": [
+                    0,
+                    1
+                ]
+            },
+            "feature": {
+                "name": "feature: gender",
+                "tags": [
+                    "inputs",
+                    "categorical",
+                    "sensitive",
+                    "gender",
+                    "sex",
+                    "provides-groups-info"
+                ],
+                "groups": {
+                    "1": "male",
+                    "2": "female"
+                },
+                "column": 1,
+                "missing_label": NaN
+            }
+        }
+    ]
+}

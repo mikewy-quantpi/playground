@@ -1,0 +1,9 @@
+{
+  "roi_robustness": {
+    "function": "event-based robustness",
+    "specification": {
+        "condition event": "prediction is correct",
+        "event": "perturbed prediction is incorrect"
+    }
+  }
+}

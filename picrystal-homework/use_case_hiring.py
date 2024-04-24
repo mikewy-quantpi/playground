@@ -10,6 +10,7 @@ import picrystal_test.core
 import picrystal_test.test_catalog
 from picrystal_test.package_wrappers import PackageWrapper
 from picrystal_test.embedders import BinaryEmbedderFromProbability
+from picrystal_test import perturbers
 
 
 URL = 'https://storage.googleapis.com/picrystal-bucket/hiring/445b7773-3431-4c34-a762-ce8986670aa3_main_hiring_updated.csv'
@@ -76,10 +77,10 @@ class HiringUseCase:
             tags=("categorical", "binary", "hiring")
         ),
 
-        PositiveBinaryEmbedderFromProbability(
-            on='predictions',
-            threshold=0.7,
-        ),
+        # PositiveBinaryEmbedderFromProbability(
+        #     on='predictions',
+        #     threshold=0.7,
+        # ),
 
         embedders.CategoricalIdentityInputEmbedder(
             column=1,
@@ -117,7 +118,18 @@ class HiringUseCase:
         )
     ]
 
-    perturbers = []
+    perturbers = [
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[0], column_name='state'),
+        perturbers.RandomShufflePerturber(column_indices_to_shuffle=[1], column_name='gender'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[2], column_name='marirtal description'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[3], column_name='citizen description'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[4], column_name='race description'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[5], column_name='department'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[6], column_name='recruitment source'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[7], column_name='performance score'),
+        # perturbers.RandomShufflePerturber(column_indices_to_shuffle=[8], column_name='special projects count'),
+    ]
+
 
 
 if __name__ == "__main__":
