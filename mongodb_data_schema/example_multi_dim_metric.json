@@ -1,0 +1,67 @@
+{
+    "name": "example metric",
+    "type": "performance",
+    "projection_embedder": {
+        "name": "",
+        "dimensions" : [
+            {
+                "index": 0,
+                "name": "gender",
+                "properties": {},
+                "bins": [
+                    {
+                        "_id": "123",
+                        "index": 0,
+                        "name": "male"
+                    },
+                    {
+                        "_id": "abc",
+                        "index": 1,
+                        "name": "female"
+                    }
+                ]
+            },
+            {
+                "index": 1,
+                "name": "race",
+                "properties": {},
+                "bins": [
+                    {
+                        "_id": "race_123",
+                        "index": 0,
+                        "name": "white"
+                    },
+                    {
+                        "_id": "race_abc",
+                        "index": 1,
+                        "name": "black"
+                    }
+                ]
+            }
+        ]
+    },
+    "performance_embedder": {
+        "name": "only prediction"
+    },
+    "fairness settings": {},
+    "assessment results": [
+        {
+            "dim1_bin_id": "123",
+            "dim2_bin_id": "race_123",
+            "# of applicants": 100,
+            "# of selected": 80
+        },
+        {
+            "dim1_bin_id": "abc",
+            "dim2_bin_id": "race_abc",
+            "# of applicants": 110,
+            "# of selected": 70
+        },
+        {
+            "..."
+        },
+        {
+            "..."
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "example metric",
+    "type": "performance",
+    "projection_embedder": {
+        "name": "",
+        "dimensions" : [
+            {
+                "index": 0,
+                "name": "gender",
+                "properties": {},
+                "bins": [
+                    {
+                        "_id": "123",
+                        "index": 0,
+                        "name": "male"
+                    },
+                    {
+                        "_id": "abc",
+                        "index": 1,
+                        "name": "female"
+                    }
+                ]
+            }
+        ]
+    },
+    "performance_embedder": {
+        "name": "only prediction"
+    },
+    "fairness settings": {},
+    "assessment results": [
+        {
+            "dim_bin_id": "123",
+            "# of applicants": 100,
+            "# of selected": 80
+        },
+        {
+            "dim_bin_id": "abc",
+            "# of applicants": 110,
+            "# of selected": 70
+        }
+    ]
+}
