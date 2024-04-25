@@ -4,6 +4,7 @@ import re
 
 from json import JSONEncoder
 from pymongo import MongoClient
+from itertools import product
 
 
 client = MongoClient('mongodb://localhost:27017/')
@@ -40,7 +41,7 @@ class Bin:
         self.index = index
         self.name = name
 
-def project_embedder_factory(raw_metric):
+def projection_embedder_factory(raw_metric):
     dimensions = []
     dim_index = -1
     for key in raw_metric.keys():
@@ -58,9 +59,6 @@ def project_embedder_factory(raw_metric):
         dimensions=dimensions
     )
 
-raw_metric = raw_metrics_dict['demographic_parity'][0]
-project_embedder = project_embedder_factory(raw_metric)
-
 
 class MetricEncoder(JSONEncoder):
     def default(self, obj):
@@ -68,57 +66,31 @@ class MetricEncoder(JSONEncoder):
             return str(obj)
         return obj.__dict__
 
-encoded_project_embedder = json.loads(json.dumps(
-    obj=project_embedder,
-    cls=MetricEncoder,
-    indent=4
-))
+# raw_metric = raw_metrics_dict['demographic_parity'][0]
+# projection_embedder = projection_embedder_factory(raw_metric)
 
-# print(encoded_project_embedder)
-# print("=============================")
-# print(type(encoded_project_embedder))
-# print("=============================")
-# insert_result = collection.insert_one(encoded_project_embedder)
-# print(insert_result)
-
-
-# performance embedder
-
-# fairness settings
-
-# perturber family
+# encoded_projection_embedder = json.loads(json.dumps(
+    # obj=projection_embedder,
+    # cls=MetricEncoder,
+    # indent=4
+# ))
 
 ###############################################################################
 # AssessmentResult
 ###############################################################################
 class AssessmentResult:
-    def __init__(self, subgroups, applicants, selected):
+    def __init__(self, subgroup, applicants, selected):
         self._id = uuid.uuid4()
-        self.subgroups = subgroups
+        self.subgroup = subgroup
         self.applicants = applicants
         self.selected = selected
 
-
-# assessment_result = AssessmentResult(
-    # subgroups=["1", "2", "3"],
-    # applicants=100,
-    # selected=70
-# )
-
-# encoded_assessment_result = json.loads(json.dumps(
-    # obj=assessment_result,
-    # cls=MetricEncoder,
-    # indent=4
-# ))
-
-# print(encoded_assessment_result)
-
 class Metric:
-    def __init__(self, name, type, projection_embedder, assessment_result):
+    def __init__(self, name, type, projection_embedder, assessment_results):
         self.name = name
         self.type = type
         self.projection_embedder = projection_embedder
-        self.assessment_result = assessment_result
+        self.assessment_results = assessment_results
 
 ###############################################################################
 # TODO:
@@ -127,14 +99,42 @@ class Metric:
 # - Add perturber family
 # - Add fairness settings
 ###############################################################################
+def assessment_results_factory(raw_metric):
+    embedder = projection_embedder_factory(raw_metric)
+
+    bin_ids = [[bin._id for bin in dim.bins] for dim in embedder.dimensions]
+    subgroups = list(product(*bin_ids))
+    applicants = raw_metric['metric']['# of applicants']
+    selected = raw_metric['metric']['# of selected']
+
+    results = list(zip(subgroups, applicants, selected))
+    assessment_results = [AssessmentResult(a, b, c) for a, b, c in results]
+
+    return embedder, assessment_results
 
 
+raw_metric = raw_metrics_dict['demographic_parity_mvariable'][0]
+projection_embedder, assessment_results = assessment_results_factory(raw_metric)
+
+metric = Metric(
+    name="mike",
+    type="performance",
+    projection_embedder=projection_embedder,
+    assessment_results=assessment_results
+)
+
+encoded_metric = json.loads(json.dumps(
+    obj=metric,
+    cls=MetricEncoder,
+    indent=4
+))
+print(encoded_metric)
 
 
 ###############################################################################
 # insert into MongoDB
 ###############################################################################
-# insert_result = collection.insert_one(metric.__dict__)
-# print(insert_result)
+insert_result = collection.insert_one(encoded_metric)
+print(insert_result)
 
 client.close()
