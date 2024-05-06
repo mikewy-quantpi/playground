@@ -1,0 +1,131 @@
+{
+    "subgroup": [
+        [
+            0,
+            0
+        ],
+        [
+            0,
+            1
+        ],
+        [
+            1,
+            0
+        ],
+        [
+            1,
+            1
+        ]
+    ],
+    "# of applicants": [
+        0,
+        1,
+        18,
+        9
+    ],
+    "# of selected": [
+        0,
+        1,
+        10,
+        5
+    ],
+    "subgroups_order": [
+        "feature1",
+        "feature2"
+    ],
+    "selection rate": [],
+    "impact ratio": [],
+    "mu": "NaN",
+    "risk": 0.0,
+    "value": 0.0,
+    "name": "risk",
+    "predictions": {},
+    "feature1": {
+        "name": "Text mentions an ethnicity",
+        "tags": [],
+        "option": "question",
+        "class_info": [
+            {
+                "value": 0,
+                "name": "Hispanic or Latino"
+            },
+            {
+                "value": 1,
+                "name": "White"
+            },
+            {
+                "value": 2,
+                "name": "Black or African American"
+            },
+            {
+                "value": 3,
+                "name": "Native Hawaiian or Pacific Islander"
+            },
+            {
+                "value": 4,
+                "name": "Asian"
+            },
+            {
+                "value": 5,
+                "name": "Native American or Alaska Native"
+            },
+            {
+                "value": 6,
+                "name": "None"
+            },
+            {
+                "value": 7,
+                "name": "Two or more"
+            }
+        ]
+    },
+    "feature2": {
+        "name": "Length of text",
+        "option": "question and context",
+        "bin width": 250,
+        "max bins": 10,
+        "class_info": [
+            {
+                "value": 0,
+                "name": "0<= length <250"
+            },
+            {
+                "value": 1,
+                "name": "250<= length <500"
+            },
+            {
+                "value": 2,
+                "name": "500<= length <750"
+            },
+            {
+                "value": 3,
+                "name": "750<= length <1000"
+            },
+            {
+                "value": 4,
+                "name": "1000<= length <1250"
+            },
+            {
+                "value": 5,
+                "name": "1250<= length <1500"
+            },
+            {
+                "value": 6,
+                "name": "1500<= length <1750"
+            },
+            {
+                "value": 7,
+                "name": "1750<= length <2000"
+            },
+            {
+                "value": 8,
+                "name": "2000<= length <2250"
+            },
+            {
+                "value": 9,
+                "name": "length >=2250"
+            }
+        ]
+    }
+
+}
