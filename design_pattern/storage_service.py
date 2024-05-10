@@ -1,4 +1,5 @@
 from abc import abstractmethod
+import uuid
 
 
 class Singleton:
@@ -11,51 +12,32 @@ class Singleton:
 
 
 class StorageService(Singleton):
-    _client = None
+    pass
 
-    @property
-    @abstractmethod
-    def client(self):
-        raise NotImplementedError
 
-    @abstractmethod
-    def upload_file(self):
-        raise NotImplementedError
+def client_generator():
+    return uuid.uuid4()
 
 
 class GCloudStorageService(StorageService):
-    @property
-    def client(self):
-        if not GCloudStorageService._client:
-            GCloudStorageService._client = "GCloud client"
-        return GCloudStorageService._client
+    _client = None
 
-    def upload_file(self):
-        print(self.client + ": upload_file")
+    def set_client(value):
+        GCloudStorageService._client = value
+
+    def get_client(cls):
+        return GCloudStorageService._client
 
 
 class MinioStorageService(StorageService):
-    @property
-    def client(self):
-        if not MinioStorageService._client:
-            MinioStorageService._client = "Minio client"
-        return MinioStorageService._client
+    _client = None
 
-    def upload_file(self):
-        print(self.client + ": upload_file")
+    def get_client(cls):
+        return MinioStorageService._client
 
 
 if __name__ == "__main__":
-    g1 = GCloudStorageService()
-    g1.upload_file()
-    g2 = GCloudStorageService()
-    g2.upload_file()
-    print(g1 is g2)
-
-    m1 = MinioStorageService()
-    m1.upload_file()
-    print(m1 is g1)
-
-    print(id(g1))
-    print(id(g2))
-    print(id(m1))
+    GCloudStorageService.set_client(100)
+    MinioStorageService._client = 200
+    print(id(GCloudStorageService._client))
+    print(id(MinioStorageService._client))
