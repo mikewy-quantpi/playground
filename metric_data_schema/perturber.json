@@ -1,0 +1,6 @@
+{
+    "name": "typo question perturber",
+    "Maximum typos per word": 1,
+    "Probability of typos in a word": 0.1,
+    "Seed to augumenter": 42
+}

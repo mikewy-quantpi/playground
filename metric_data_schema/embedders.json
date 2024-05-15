@@ -1,0 +1,20 @@
+[
+    {
+        "name": "text contains gender pronouns",
+        "option": "context",
+        "class_info": {
+            "0": "Only male",
+            "1": "Only female",
+            "2": "Either both or none"
+        }
+    },
+    {
+        "name": "text length",
+        "option": "context",
+        "class_info": {
+            "0": "0 <= length < 25",
+            "1": "25 <= length < 50",
+            "2": "50 <= length < 75"
+        }
+    }
+]

@@ -1,0 +1,34 @@
+{
+    "subgroup_name": [
+        [
+            "Only male",
+            "0 <= length < 25"
+        ],
+        [
+            "Only male",
+            "25 <= length < 50"
+        ]
+    ],
+    "# of applicatnts": [
+        1,
+        2
+    ],
+    "# of selected": [
+        0,
+        1
+    ],
+    "estimate": [
+        0,
+        0.5
+    ],
+    "confidence interval": [
+        [
+            0,
+            0.9
+        ],
+        [
+            0.1,
+            0.8
+        ]
+    ]
+}
